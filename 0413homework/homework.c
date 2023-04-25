@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/*
 void Fibonacci(int n)
 {
     int f1 = 0, f2 = 1, f3;
@@ -18,13 +19,32 @@ void Fibonacci(int n)
         f2 = f3;
     }
 }
+*/
+
+int Fibonacci(int n)
+{
+    if (n < 1)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return Fibonacci(n - 1) + Fibonacci(n - 2); 
+}
+
+void FibonacciShow(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", Fibonacci(i));
+    }
+}
 
 int main()
 {
 	int num;
 	scanf_s("%d", &num);
 
-	Fibonacci(num);
+	FibonacciShow(num);
 
 	return 0;
 }
